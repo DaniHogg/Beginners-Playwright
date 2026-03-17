@@ -19,11 +19,16 @@ jobs:
           node-version: '18'
           cache: 'npm'
       
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libnss3 libnspr4 libatk-bridge2.0-0 libdrm2 libxkbcommon0 libxcomposite1 libxdamage1 libxrandr2 libgbm1 libxss1 libasound2
+
       - name: Install dependencies
         run: npm ci
       
       - name: Install Playwright Browsers
-        run: npx playwright install --with-deps
+        run: npx playwright install
       
       - name: Run Playwright tests
         run: npm test
