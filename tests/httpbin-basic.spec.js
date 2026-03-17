@@ -1,5 +1,5 @@
 const { test, expect } = require('@playwright/test');
-
+// Basic testing going to site and checking it loads
 test.describe('HTTPBin - Basic Operations', () => {
   test('homepage loads correctly', async ({ page }) => {
     await page.goto('https://httpbin.org/');
