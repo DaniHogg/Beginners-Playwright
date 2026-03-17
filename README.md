@@ -1,6 +1,6 @@
 # Playwright Testing Project
 
-A comprehensive end-to-end testing project built with Playwright and TypeScript.
+A comprehensive end-to-end testing project built with Playwright and JavaScript.
 
 ## Prerequisites
 
@@ -79,7 +79,7 @@ playwright-testing/
 
 ## Writing Tests
 
-Tests should be placed in the `tests/` directory with `.spec.ts` extension.
+Tests should be placed in the `tests/` directory with `.spec.js` extension.
 
 Example test structure:
 ```typescript
@@ -93,7 +93,7 @@ test('example test', async ({ page }) => {
 
 ## Configuration
 
-Edit `playwright.config.ts` to:
+Edit `playwright.config.js` to:
 - Add/remove browsers
 - Configure timeouts
 - Set up test runs in parallel
