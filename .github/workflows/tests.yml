@@ -30,9 +30,22 @@ jobs:
       - name: Install Playwright Browsers
         run: npx playwright install
       
-      - name: Run Playwright tests
+      - name: Run Playwright JS tests
         run: npm test
       
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'  
+          cache: 'pip'
+
+      - name: Install Python dependencies
+        run: |
+          pip install -r test-py/requirements.txt
+      
+      - name: Run Playwright Python tests
+        run: pytest test-py -v   
+
       - name: Upload blob report to GitHub Actions Artifacts
         if: always()
         uses: actions/upload-artifact@v4
